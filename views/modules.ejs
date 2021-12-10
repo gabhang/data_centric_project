@@ -1,0 +1,49 @@
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+    <h1>Modules</h1>
+    <table>
+        <tr>
+            <!-- table headers -->
+            <th>Module ID</th>
+            <th>Name</th>
+            <th>Credits</th>
+            <th>Update</th>
+            <th>Students</th>
+        </tr>
+        <!-- loop through each data to output list -->
+        <% modules.forEach((module)=>
+            { %>
+            <tr>
+                <td>
+                    <%= module.mid %>
+                </td>
+                <td>
+                    <%= module.name %>
+                </td>
+                <td>
+                    <%= module.credits %>
+                </td>
+                <td>
+                    <a href="/module/edit/<%= module.mid%>">
+                        Update
+                    </a>
+                </td>
+                <td>
+                    <a href="/module/students/<%= module.mid%>">
+                        List
+                    </a>
+                </td>
+
+            </tr>
+            <% }) %>
+    </table>
+    <!-- link to redirect to main page -->
+    <a href="/">Home</a>
+</body>

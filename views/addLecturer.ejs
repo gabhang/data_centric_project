@@ -1,0 +1,25 @@
+<body>
+    <h1>Add Lecturer</h1>
+    <!-- errors outputting...if there's any -->
+    <% if (errors !=undefined) { %>
+        <ul>
+            <% errors.forEach((error)=> { %>
+                <li>
+                    <%= error.msg %>
+                </li>
+                <% }) %>
+        </ul>
+        <% } %>
+            <!-- form with action to add lecturer by using POST method -->
+            <form action="/addLecturer" method="POST">
+                <label>Lecturer ID</label>
+                <input type="text" name="_id" value="<%= _id%>"><br>
+                <label>Name</label>
+                <input type="text" name="name" value="<%= name%>"><br>
+                <label>Dept</label>
+                <input type="text" name="dept" value="<%= dept%>">
+                <input type="submit" value="Add">
+            </form>
+            <!-- link to redirect to main page -->
+            <a href="/">Home</a>
+</body>

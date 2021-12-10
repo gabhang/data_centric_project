@@ -1,0 +1,39 @@
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+    <h1>Lecturers</h1>
+    <a href="/addLecturer">
+        <button>Add Lecturer</button>
+    </a>
+    <table>
+        <tr>
+            <!-- table headers -->
+            <th>Lecturer ID</th>
+            <th>Name</th>
+            <th>Department</th>
+        </tr>
+        <!-- loop through each data to output list -->
+        <% lecturers.forEach((lecturer)=>
+            { %>
+            <tr>
+                <td>
+                    <%= lecturer._id %>
+                </td>
+                <td>
+                    <%= lecturer.name %>
+                </td>
+                <td>
+                    <%= lecturer.dept %>
+                </td>
+            </tr>
+            <% }) %>
+    </table>
+    <!-- link to redirect to main page -->
+    <a href="/">Home</a>
+</body>

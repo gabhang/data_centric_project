@@ -1,0 +1,36 @@
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+    <h1>Students studying <%= mid %>
+    </h1>
+    <table>
+        <tr>
+            <th>Student ID</th>
+            <th>Name</th>
+            <th>Credits</th>
+        </tr>
+        <!-- loop through each data to output list -->
+        <% modules.forEach((module)=>
+            { %>
+            <tr>
+                <td>
+                    <%= module.sid %>
+                </td>
+                <td>
+                    <%= module.name %>
+                </td>
+                <td>
+                    <%= module.gpa %>
+                </td>
+            </tr>
+            <% }) %>
+    </table>
+    <!-- link to redirect to main page -->
+    <a href="/">Home</a>
+</body>

@@ -1,0 +1,25 @@
+<body>
+    <h1>Edit Module</h1>
+    <!-- errors outputting...if there's any -->
+    <% if (errors !=undefined) { %>
+        <ul>
+            <% errors.forEach((error)=> { %>
+                <li>
+                    <%= error.msg %>
+                </li>
+                <% }) %>
+        </ul>
+        <% } %>
+            <!-- form with action to edit module by using POST method -->
+            <form action="/module/edit/<%= mid%>" method="POST">
+                <label>Module ID</label>
+                <input type="text" name="mid" disabled value="<%= mid%>"><br>
+                <label>Name</label>
+                <input type="text" name="name" value="<%= name%>"><br>
+                <label>Credits</label>
+                <input type="number" name="credits" value="<%= credits%>"><br>
+                <input type="submit" value="OK">
+            </form>
+            <!-- link to redirect to main page -->
+            <a href="/">Home</a>
+</body>

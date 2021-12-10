@@ -1,0 +1,45 @@
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+    <h1>Students</h1>
+    <a href="/addStudent">
+        <button>Add Student</button>
+    </a>
+    <table>
+        <tr>
+            <!-- table headers -->
+            <th>Student ID</th>
+            <th>Name</th>
+            <th>GPA</th>
+            <th>Action</th>
+        </tr>
+        <!-- loop through each data to output list -->
+        <% students.forEach((student)=>
+            { %>
+            <tr>
+                <td>
+                    <%= student.sid %>
+                </td>
+                <td>
+                    <%= student.name %>
+                </td>
+                <td>
+                    <%= student.gpa %>
+                </td>
+                <td>
+                    <a href="/students/delete/<%= student.sid%>">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+            <% }) %>
+    </table>
+    <!-- link to redirect to main page -->
+    <a href="/">Home</a>
+</body>
